@@ -27,7 +27,7 @@ fs = aiplatform.featurestore.Featurestore(featurestore_name='ff_fs')
 # Create Entity Type
 shipment_data_entity_type = fs.create_entity_type(
        entity_type_id="shipment_data",
-       description="shipment data",
+       description="shipment data"
        )
 
 # create feature
@@ -35,18 +35,21 @@ avg_spot_rate = shipment_data_entity_type.create_feature(
         feature_id="avg_spot_rate",
         value_type="STRING", # BOOL, BOOL_ARRAY, DOUBLE, DOUBLE_ARRAY, INT64, INT64_ARRAY, STRING, STRING_ARRAY, BYTES.
         description="average spot rate for shipment",
+        labels={"environment": "testing", "source": "snowflake"}
     )
 
 weight = shipment_data_entity_type.create_feature(
         feature_id="weight",
         value_type="STRING",
         description="weight for shipment",
+        labels={"environment": "testing", "source": "snowflake"}
     )
 
 palletized_linear_feet = shipment_data_entity_type.create_feature(
         feature_id="palletized_linear_feet",
         value_type="STRING",
         description="palletized_linear_feet for shipment",
+        labels={"environment": "testing", "source": "snowflake"}
     )
 
 ##########################################################################################
